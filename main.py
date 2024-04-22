@@ -1,10 +1,13 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import sys
+
+sys.path.insert(1, "C:/past/your/coppied/path/here/streamlit_option_menu")
 import streamlit_authenticator as stauth
 
 import home, login, financeiro, suporte, comercial
 
-
+sys.path.insert(1, "C:/past/your/coppied/path/here/streamlit_option_menu")
 st.set_page_config(layout="wide", page_title="Leste Conecta")
 
 
