@@ -1,8 +1,8 @@
 
 import streamlit as st
 
-
 def app():
+
     st.subheader(':green[LESTE CONECTA]', divider='rainbow')
     st.markdown('<h1 style="text-align: center; color: green;">PROCEDIMENTOS</h1><br>', unsafe_allow_html=True)
 
@@ -17,6 +17,6 @@ def app():
 
     with col3:
         st.header("LESTE MOVEL")
-        st.link_button("IR", "https://www.lestemovel.com.br/")
+    st.link_button("IR", "https://www.lestemovel.com.br/")
 
     st.divider()

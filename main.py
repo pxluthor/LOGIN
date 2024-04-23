@@ -5,7 +5,7 @@ import home, login, financeiro, suporte, comercial
 
 
 
-st.set_page_config(layout="wide", page_title="Leste Conecta")
+#st.set_page_config(layout="wide", page_title="Leste Conecta")
 
 
 
@@ -30,13 +30,10 @@ class MultiApp:
                 icons=['person-circle','house-fill','trophy-fill','chat-fill','info-circle-fill'],
                 menu_icon='chat-text-fill',
                 default_index=0,
-                styles={
-                    "container": {"padding": "5!important","background-color":'black'},
-        "icon": {"color": "white", "font-size": "23px"}, 
-        "nav-link": {"color":"white","font-size": "15px", "text-align": "left", "margin":"0px", "--hover-color": "blue"},
-        "nav-link-selected": {"background-color": "#02ab21"},}
                 
-                )
+                 )   
+                
+            
 
         
         if app == "HOME":
