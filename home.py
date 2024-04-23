@@ -17,6 +17,6 @@ def app():
 
     with col3:
         st.header("LESTE MOVEL")
-    st.link_button("IR", "https://www.lestemovel.com.br/")
+        st.link_button("IR", "https://www.lestemovel.com.br/")
 
     st.divider()
