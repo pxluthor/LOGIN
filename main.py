@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import streamlit_authenticator as stauth
+#import streamlit_authenticator as stauth
 import home, login, financeiro, suporte, comercial
 
 
