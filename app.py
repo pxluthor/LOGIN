@@ -32,7 +32,7 @@ def set_role():
 
 
 
-st.write(st.session_state.role) 
+
 
 menu() # Renderiza o menu dinâmico!
 
