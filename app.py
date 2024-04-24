@@ -2,7 +2,7 @@ import streamlit as st
 from menu import menu
 st.selectbox(
             "Escolha sua função:",
-            [None, "AGENTE", "SUPERVISÃO", "COORDENAÇÃO"],
+            ["AGENTE", "SUPERVISÃO", "COORDENAÇÃO"],
             key="role",
         
             )
