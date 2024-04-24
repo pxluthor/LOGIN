@@ -29,6 +29,7 @@ df_suporte = load_data()
 st.sidebar.page_link("pages/home.py", label="HOME")
 st.sidebar.page_link("pages/comercial.py", label="COMERCIAL")
 st.sidebar.page_link("pages/financeiro.py", label="FINANCEIRO")
+st.sidebar.page_link("app.py", label="DELOGAR")
 st.sidebar.divider()
     
 

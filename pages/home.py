@@ -9,6 +9,7 @@ st.markdown('<h1 style="text-align: center; color: green;">BEM VINDO A PÁGINA I
 st.sidebar.page_link("pages/comercial.py", label="🛒 COMERCIAL")
 st.sidebar.page_link("pages/financeiro.py", label="💲 FINANCEIRO")
 st.sidebar.page_link("pages/suporte.py", label="🛠️ SUPORTE")
+st.sidebar.page_link("app.py", label="DELOGAR")
 st.sidebar.divider()
 
 col1, col2, col3 = st.columns(3)
