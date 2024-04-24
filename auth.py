@@ -10,7 +10,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 def authenticate(login, senha):
     # Autenticação com o Google Sheets
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('cred.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('acess.json', scope)
     client = gspread.authorize(creds)
 
     # Abre a planilha e a folha
@@ -28,7 +28,7 @@ def authenticate(login, senha):
 def authenticate2(login, senha):
     # Autenticação com o Google Sheets
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('cred.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('acess.json', scope)
     client = gspread.authorize(creds)
 
     # Abre a planilha e a folha
@@ -46,7 +46,7 @@ def authenticate2(login, senha):
 def authenticate3(login, senha):
     # Autenticação com o Google Sheets
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-    creds = ServiceAccountCredentials.from_json_keyfile_name('cred.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('acess.json', scope)
     client = gspread.authorize(creds)
 
     # Abre a planilha e a folha

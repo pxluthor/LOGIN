@@ -12,7 +12,7 @@ st.markdown('<h1 style="text-align: center; color: green;">PROCEDIMENTOS - FINAN
 
 @st.cache_data()
 def load_data():
-    credenciais = pygsheets.authorize(service_file=os.getcwd() + "/cred.json")
+    credenciais = pygsheets.authorize(service_file=os.getcwd() + "/acess.json")
     base_dados = "https://docs.google.com/spreadsheets/d/1kCa7pftxJlu6xstnhwErElqe-bHkHKyLXjI7X9gdbVY"
     arquivo = credenciais.open_by_url(base_dados)
 
