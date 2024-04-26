@@ -89,6 +89,7 @@ def acesso_gerencia():
     st.sidebar.page_link("pages/financeiro.py", label="FINANCEIRO")
     st.sidebar.page_link("pages/suporte.py", label="SUPORTE")    
     st.sidebar.page_link("pages/t_gerencia.py", label="GERENCIA")
+    st.sidebar.page_link("pages/t_supervisor.py", label="SUPERVISÃO")
 
 def set_role():
     # Função de retorno de chamada para salvar a seleção de função no estado da sessão
