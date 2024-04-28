@@ -17,7 +17,7 @@ st.markdown(
 st.sidebar.link_button("Trancrição de Áudio", "https://transcriptionleste.streamlit.app/")
 
 st.title('Testando vídeo')
-
+st.sidebar.page_link("app.py", label="DESLOGAR")
 
 container = st.container(border=True)
 VIDEO_URL = "https://youtu.be/5aFnP22GpPI"
