@@ -45,7 +45,7 @@ st.markdown(
 with st.container() as conteudo:
     # Seu conteúdo Streamlit normal aqui...
     st.subheader(':green[LESTE CONECTA]', divider='rainbow')
-    st.markdown('<h1 style="text-align: center; color: green;">TESTE D ACESSO A COORDENAÇÃO</h1><br>', unsafe_allow_html=True)
+    st.markdown('<h1 style="text-align: center; color: green;">TESTE DE ACESSO A COORDENAÇÃO</h1><br>', unsafe_allow_html=True)
     
     st.header('teste de acesso Gerência')
     st.sidebar.page_link("app.py", label="DESLOGAR")
