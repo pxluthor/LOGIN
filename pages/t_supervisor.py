@@ -16,7 +16,7 @@ st.markdown(
 
 st.sidebar.link_button("Trancrição de Áudio", "https://transcriptionleste.streamlit.app/")
 
-st.title('Tetando vídeo')
+st.title('Testando vídeo')
 
 
 container = st.container(border=True)
