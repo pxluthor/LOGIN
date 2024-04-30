@@ -27,6 +27,8 @@ with col3:
 
 st.divider()
 
+st.header("CONSULTAR VIABILIDADE")
+st.link_button("APP - Transcrição de Audio", "https://audiotranscription-i.streamlit.app/")
     
    
     
