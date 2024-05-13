@@ -37,14 +37,13 @@ st.set_page_config(layout="wide", page_title="Leste conecta")
 
 # ANIMAÇÕES
 
-def load_and_display_lottie(filepath):
+#def load_and_display_lottie(filepath):
 #        lottie_data = carregar_arquivo_lottie(filepath)
  #       st_lottie(lottie_data, speed=1, reverse=False, loop=True, quality="low", height=400, width=400)
 
   #  # Exibe outras animações Lottie
    #     load_and_display_lottie(pasta_pages/"animation.json")
     #    load_and_display_lottie(pasta_pages / "animation2.json")
-
 
 
 st.subheader(':green[LESTE CONECTA]', divider='rainbow')
