@@ -1,8 +1,8 @@
 from pathlib import Path
 import streamlit as st
-import json
-from streamlit_lottie import st_lottie
-import base64
+#import json
+#from streamlit_lottie import st_lottie
+#import base64
 
 def carregar_arquivo_lottie(caminho_arquivo: str):
     with open(caminho_arquivo, "r") as f:
@@ -20,22 +20,20 @@ animacao_fundo = carregar_arquivo_lottie(caminho_animation2)
 # Define a configuração da página antes de fazer qualquer outra chamada do Streamlit
 st.set_page_config(layout="wide", page_title="Leste conecta")
 
-#st.set_page_config(layout="wide", page_title="Leste conecta")
-
-
-bg = """
-<style> 
-[data-testid="stAppViewContainer"]{
-background-image: url('https://img.freepik.com/fotos-gratis/fone-de-ouvido-de-audio-usado-por-agentes-de-call-center-para-atender-clientes-e-fazer-telecomunicacoes-com-tecnologia-estacao-de-trabalho-de-atendimento-ao-cliente-vazia-com-fones-de-ouvido-computadores-e-aparelhos-modernos_482257-40834.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1711238400&semt=ais');
-background-size: cover;
-}
 
 
 
-</style>
+#bg = """
+#<style> 
+#[data-testid="stAppViewContainer"]{
+#background-image: url('https://img.freepik.com/fotos-gratis/fone-de-ouvido-de-audio-usado-por-agentes-de-call-center-para-atender-clientes-e-fazer-telecomunicacoes-com-tecnologia-estacao-de-trabalho-de-atendimento-ao-cliente-vazia-com-fones-de-ouvido-computadores-e-aparelhos-modernos_482257-40834.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1711238400&semt=ais');
+#background-size: cover;
+#}
+#</style>
 
-"""
-st.markdown(bg, unsafe_allow_html=True)
+#"""
+
+#st.markdown(bg, unsafe_allow_html=True)
 
 # ANIMAÇÕES
 
