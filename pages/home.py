@@ -78,7 +78,7 @@ with col3:
 st.divider()
 
 st.write('<h1 style="font-weight:bold; color:">APP- TRANSCRIPTION</h1>', unsafe_allow_html=True)
-st.link_button("APP - Transcrição de Audio", "https://audiotranscription-i.streamlit.app/")
+st.link_button("APP - Transcrição de Audio", "https://chat-audio.streamlit.app/")
     
    
     
