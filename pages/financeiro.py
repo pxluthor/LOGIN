@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import pygsheets
 import os
-import streamlit as st
+
 
 
 
@@ -12,7 +12,7 @@ st.markdown('<h1 style="text-align: center; color: green;">PROCEDIMENTOS - FINAN
 
 @st.cache_data()
 def load_data():
-    credenciais = pygsheets.authorize(service_file=os.getcwd() + "/acess.json")
+    credenciais = pygsheets.authorize(service_file=os.getcwd() + "/cred.json")
     base_dados = "https://docs.google.com/spreadsheets/d/1kCa7pftxJlu6xstnhwErElqe-bHkHKyLXjI7X9gdbVY"
     arquivo = credenciais.open_by_url(base_dados)
 
@@ -31,7 +31,7 @@ st.sidebar.page_link("pages/home.py", label="HOME")
 st.sidebar.page_link("pages/comercial.py", label="🛒 COMERCIAL")
 st.sidebar.page_link("pages/financeiro.py", label="💲 FINANCEIRO")
 st.sidebar.page_link("pages/suporte.py", label="🛠️ SUPORTE")
-st.sidebar.page_link("app.py", label="DELOGAR")
+st.sidebar.page_link("app.py", label="SAIR")
 st.sidebar.divider()
 
 st.sidebar.header('PESQUISAR FINANCEIRO')
@@ -48,34 +48,50 @@ if not df_filtrado.empty: #(empty retorna True se o df estiver vazio, 'significa
         
     st.markdown(f'<span style="font-size:25px;font-weight: bold">:green[{text_filtred}]</span>', unsafe_allow_html=True) 
     st.markdown('<br>', unsafe_allow_html=True)
-               
-       
-    st.info('DESCRIÇÃO', icon="ℹ️")
-    descricao = df_filtrado['DESCRIÇÃO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
-    st.write(descricao)
-    st.divider()
+
+   
+    st.info('**DESCRIÇÃO**', icon="ℹ️")
+    with st.expander("👇 👀"):
+        
+        descricao = df_filtrado['DESCRIÇÃO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
+        st.markdown(f'<span style="font-size:60px;font-weight: bold">:black[{descricao}]</span>', unsafe_allow_html=True) 
+
+
+    #----------------------------------------------------------------------------
+    # st.info, st.warring, st.error, st.exception, success
+    #----------------------------------------------------
+
+    st.success(' **REQUISITOS**', icon= "⚠️")
+    with st.expander("👇 👀"):
+        requisitos = df_filtrado['REQUISITOS'].iloc[0]  # Apenas o primeiro resultado, se houver vários
+        st.markdown(requisitos)
+   #st.divider()
+
+
+    #----------------------------------------------------    
+    #st.warning('REQUISITOS', icon="⚠️")
+    #requisitos = df_filtrado['REQUISITOS'].iloc[0]  # Apenas o primeiro resultado, se houver vários
+    #st.write(requisitos)'''
+    #----------------------------------------------------
+    
 
         
-    st.warning('REQUISITOS', icon="⚠️")
-    requisitos = df_filtrado['REQUISITOS'].iloc[0]  # Apenas o primeiro resultado, se houver vários
-    st.write(requisitos)
-    st.divider()
+    st.info('**AÇÃO**', icon="🦾")
+    with st.expander("👇 👀"):
+        acao = df_filtrado['AÇÃO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
+        st.markdown(acao)
+    #st.divider()
 
         
-    st.success('AÇÃO', icon="✅")
-    acao = df_filtrado['AÇÃO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
-    st.write(acao)
-    st.divider()
+    st.success('**COMENTARIO**', icon="📋")
+    with st.expander("👇 👀"):
+        comentario = df_filtrado['COMENTARIO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
+        st.code(comentario)
+    #st.divider()
 
-        
-    st.error('COMENTARIO', icon="🚨")
-    comentario = df_filtrado['COMENTARIO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
-    st.code(comentario)
-    st.divider()
-
-    st.subheader('FECHAMENTO') # Exibindo os requisitos de forma estruturada
+    st.info('FECHAMENTO', icon="🔐") # Exibindo os requisitos de forma estruturada
     fechamento = df_filtrado['FECHAMENTO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
-    st.write(fechamento)
+    st.markdown(fechamento)
 
 else:
     st.write("Escreva a solicitação no campo de busca!")
