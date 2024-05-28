@@ -4,6 +4,8 @@ import json
 from streamlit_lottie import st_lottie
 import base64
 from streamlit_player import st_player
+from streamlit_pdf_viewer import pdf_viewer
+from PyPDF2 import PdfReader
 
 
 
@@ -80,3 +82,60 @@ with vd3:
 
 with vd4:  
     st_player("https://www.youtube.com/watch?v=kpv8CcdXfCc&pp=ygUNbGVzdGUgdGVsZWNvbQ%3D%3D")          
+st.divider()
+
+st.header('PDF_View')
+
+# Inicializa a variável de estado para a página atual
+if 'current_page' not in st.session_state:
+    st.session_state.current_page = 1
+
+# Carrega o PDF
+pdf_path = "Lendo e Manipulando Arquivos PDF - Apostila Asimov Academy.pdf"
+
+# Função para ir para a próxima página
+def next_page():
+    if st.session_state.current_page < total_pages:
+        st.session_state.current_page += 1
+
+# Função para voltar para a página anterior
+def prev_page():
+    if st.session_state.current_page > 1:
+        st.session_state.current_page -= 1
+
+# Função para definir a página atual
+def set_page(page_number):
+    if 1 <= page_number <= total_pages:
+        st.session_state.current_page = page_number
+
+
+# Carrega o PDF e obtém o número total de páginas
+def get_total_pages(pdf_path):
+    with open(pdf_path, "rb") as file:
+        pdf = PdfReader(file)
+        return len(pdf.pages)
+
+# Obtém o número total de páginas do PDF
+total_pages = get_total_pages(pdf_path)
+
+# Exibe o visualizador de PDF com a página atual
+pdf_viewer(pdf_path, width=700, pages_to_render=[st.session_state.current_page])
+
+# Cria os botões para navegação
+col1, col2, col3 = st.columns(3)
+with col1:
+    if st.button('Página Anterior'):
+        prev_page()
+with col2:
+    st.write(f'Página {st.session_state.current_page} de {total_pages}')
+with col3:
+    if st.button('Próxima Página'):
+        next_page()
+
+
+# Campo de entrada numérica para escolher a página
+page_input = st.number_input('Ir para a página:', min_value=1, max_value=total_pages, value=st.session_state.current_page)
+
+# Atualiza a página atual quando o valor do número de página é alterado
+if page_input != st.session_state.current_page:
+    set_page(page_input)
