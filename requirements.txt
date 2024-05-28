@@ -38,6 +38,9 @@ googleapis-common-protos==1.62.0
 grpcio==1.62.2
 grpcio-status==1.62.2
 
+streamlit_pdf_viewer
+PyPDF2
+
 gspread-dataframe
 gspread-formatting
 gspread-pandas
