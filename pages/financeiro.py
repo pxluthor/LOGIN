@@ -51,7 +51,7 @@ if not df_filtrado.empty: #(empty retorna True se o df estiver vazio, 'significa
 
    
     st.info('**DESCRIÇÃO**', icon="ℹ️")
-    with st.expander("👇 👀"):
+    with st.expander("👇 "):
         
         descricao = df_filtrado['DESCRIÇÃO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
         st.markdown(f'<span style="font-size:60px;font-weight: bold">:black[{descricao}]</span>', unsafe_allow_html=True) 
@@ -61,8 +61,8 @@ if not df_filtrado.empty: #(empty retorna True se o df estiver vazio, 'significa
     # st.info, st.warring, st.error, st.exception, success
     #----------------------------------------------------
 
-    st.success(' **REQUISITOS**', icon= "⚠️")
-    with st.expander("👇 👀"):
+    st.warning(' **REQUISITOS**', icon= "⚠️")
+    with st.expander("👇 "):
         requisitos = df_filtrado['REQUISITOS'].iloc[0]  # Apenas o primeiro resultado, se houver vários
         st.markdown(requisitos)
    #st.divider()
@@ -76,20 +76,20 @@ if not df_filtrado.empty: #(empty retorna True se o df estiver vazio, 'significa
     
 
         
-    st.info('**AÇÃO**', icon="🦾")
-    with st.expander("👇 👀"):
+    st.success('**AÇÃO**', icon="🦾")
+    with st.expander("👇 "):
         acao = df_filtrado['AÇÃO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
         st.markdown(acao)
     #st.divider()
 
         
-    st.success('**COMENTARIO**', icon="📋")
-    with st.expander("👇 👀"):
+    st.info('**COMENTARIO**', icon="📋")
+    with st.expander("👇 "):
         comentario = df_filtrado['COMENTARIO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
         st.code(comentario)
     #st.divider()
 
-    st.info('FECHAMENTO', icon="🔐") # Exibindo os requisitos de forma estruturada
+    st.error('FECHAMENTO', icon="🔐") # Exibindo os requisitos de forma estruturada
     fechamento = df_filtrado['FECHAMENTO'].iloc[0]  # Apenas o primeiro resultado, se houver vários
     st.markdown(fechamento)
 
